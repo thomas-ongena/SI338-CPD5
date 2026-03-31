@@ -61,7 +61,7 @@ main, section, header, footer {
 }
 
 .nav-link:hover, .nav-link:focus {
-    color: var(--text-dark);
+    color: var(--text-light);
     outline: 1px solid white;
 }
 
