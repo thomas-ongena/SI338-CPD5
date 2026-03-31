@@ -83,7 +83,7 @@ a:hover, a:focus {
 
 #athlete-nav .nav-link {
     font-size: 0.95rem;
-    color: var(--text-light);
+    color: var(--text-dark);
     font-weight: bold;
     white-space: nowrap;              /* Prevents link text from wrapping on resize */
     flex-shrink: 0;
@@ -174,7 +174,7 @@ a:hover, a:focus {
 
 /* Link inside the card — inherits the blue link style but sits on dark bg */
 .athlete-info-card a {
-    color: var(--text-light);
+    color: var(--text-dark);
     font-size: 0.9rem;
     font-weight: bold;
     text-decoration: none;
