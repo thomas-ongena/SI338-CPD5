@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ann Arbor Skyline</title>
+  <link rel="stylesheet" href="styles/style_reset.css">
+  <link rel="stylesheet" href="styles/main_page.css">
+  <link rel="stylesheet" href="styles/laptop.css">
+</head>
+
+<body>
+
+  <nav id="main-nav">
+    <div class="nav-container">
+      <a href="#team-roster" class="nav-link">Roster</a>
+      <a href="#team-accomplishments" class="nav-link">Accomplishments</a>
+      <a href="#player-comparison" class="nav-link">Comparison</a>
+      <a href="#team-events" class="nav-link">Events</a>
+      <a href="#team-gallery" class="nav-link">Gallery</a>
+    </div>
+  </nav>
+
+  <header>
+    <div class="header-text"> 
+     <h1>Ann Arbor Skyline Men's Cross Country</h1>
+     <h4>"Agile Minds. Big Hearts. Deep Questions."</h4>
+    </div>
+    <img src="images/athletes/21615274/skyline_logo.png" alt="Skyline High School Logo" class="header-logo">
+  </header>
+
+  <main>
+
+    <section id="team-roster">
+      <h2>The Athletes</h2>
+
+      <div id="sort-by-choices">
+        <form>
+          <fieldset>
+            <legend>Sort Athletes</legend>
+
+            <p id="sort-instructions">
+              Choose a field to sort the athlete roster.
+            </p>
+
+            <label for="sort-by">Sort by:</label>
+            <select id="sort-by" name="sort-by" aria-describedby="sort-instructions">
+              <option value="name">Name</option>
+              <option value="grade">Grade</option>
+              <option value="season-record">Season Record (SR)</option>
+              <option value="personal-record">Personal Record (PR)</option>
+            </select>
+          </fieldset>
+        </form>
+      </div>
+
+      <article id="athlete-roster">
+        <h3>Athlete Roster:</h3>
+        
+    <div class="athlete-card"
+         data-name="Garrett Comer"
+         data-grade="11"
+         data-sr="17:22.3"
+         data-pr="17:22.3">
+
+      <div class="card-inner">
+
+        <div class="card-front">
+          <img
+            src="./images/athletes/21615274/profile.jpg"
+            alt="Garrett Comer profile picture"
+            class="athlete-photo"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="card-back">
+          <h3 class="athlete-name">Garrett Comer</h3>
+          <p class="athlete-grade">Grade: 11</p>
+          <p class="athlete-sr">Season Record: 17:22.3</p>
+          <p class="athlete-pr">Personal Record: 17:22.3</p>
+
+          <a href="player_profile.html" class="athlete-link">
+            View Profile
+          </a>
+        </div>
+
+      </div>
+    </div>
+    <div class="athlete-card"
+        data-name="Athlete Name"
+        data-grade="12"
+        data-sr="00:00.0"
+        data-pr="00:00.0">
+      <div class="card-inner">
+
+        <div class="card-front">
+            <img
+                src="./images/athletes/21615274/cross_country_A.jpg"
+                alt="Athlete Name profile picture"
+                class="athlete-photo"
+                loading="lazy"
+            />
+        </div>
+
+        <div class="card-back">
+            <h3 class="athlete-name">Brady Smith</h3>
+            <p class="athlete-grade">Grade: 12</p>
+            <p class="athlete-sr">Season Record: 17:58.4</p>
+            <p class="athlete-pr">Personal Record: 17:50.2</p>
+            <a href="player_profile.html" class="athlete-link">View Profile</a>
+        </div>
+    </div>
+  </div>
+
+    <div class="athlete-card"
+        data-name="Athlete Name"
+        data-grade="12"
+        data-sr="00:00.0"
+        data-pr="00:00.0">
+      <div class="card-inner">
+
+        <div class="card-front">
+            <img
+                src="./images/athletes/21615274/cross_country_B.jpg"
+                alt="Athlete Name profile picture"
+                class="athlete-photo"
+                loading="lazy"
+            />
+        </div>
+
+        <div class="card-back">
+            <h3 class="athlete-name">John Golden</h3>
+            <p class="athlete-grade">Grade: 12</p>
+            <p class="athlete-sr">Season Record: 19:03.4</p>
+            <p class="athlete-pr">Personal Record: 18:40.2</p>
+            <a href="player_profile.html" class="athlete-link">View Profile</a>
+        </div>
+    </div>
+  </div>
+    
+    </article>
+  </section>
+
+  <section id="team-accomplishments">
+    <h2>Team Accomplishments</h2>
+    <article>
+        <h3>Accomplishment Highlights</h3>
+        <table class="accomplishments-table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Athlete & Stat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Category">Fastest Time</td>
+                    <td data-label="Athlete & Stat">Garrett Comer — 17:22.3</td>
+                </tr>
+                <tr>
+                    <td data-label="Category">Highest Placement</td>
+                    <td data-label="Athlete & Stat">John Golden — 5th place</td>
+                </tr>
+                <tr>
+                    <td data-label="Category">Best 12th Grade Runner</td>
+                    <td data-label="Athlete & Stat">Garrett Comer — 17:22.3</td>
+                </tr>
+                </tbody>
+        </table>
+    </article>
+  </section>
+
+    <section id="player-comparison">
+      <h2>Compare Athletes</h2>
+
+      <div class="comparison-controls">
+        <form>
+          <fieldset>
+            <legend>Select Athletes to Compare</legend>
+
+            <p id="comparison-instructions">
+              Select two athletes from the dropdowns to compare their season
+              statistics and shared meets
+            </p>
+
+            <div class="comparison-select">
+              <label for="athlete-a">Athlete A:</label>
+              <select id="athlete-a" name="athlete-a" aria-describedby="comparison-instructions">
+                <option value="21615274" selected>Garrett Comer</option>
+              </select>
+            </div>
+
+            <div class="comparison-select">
+              <label for="athlete-b">Athlete B:</label>
+              <select id="athlete-b" name="athlete-b" aria-describedby="comparison-instructions">
+                <option value="21615274" selected>Garrett Comer</option>
+              </select>
+            </div>
+
+            <button type="button" id="compare-button">
+              Compare
+            </button>
+          </fieldset>
+        </form>
+      </div>
+
+      <article id="comparison-results">
+        <h3>Comparison Results</h3>
+        
+    <div class="comparison-cards">
+
+      <div class="comparison-card">
+        <img src="./images/athletes/21615274/profile.jpg" alt="Garrett Comer profile picture" />
+        <h3>Garrett Comer</h3>
+        <p>Grade: 11</p>
+        <p>Season Record: 17:22.3</p>
+        <p>Personal Record: 17:22.3</p>
+        <p>Meets Competed: 13</p>
+      </div>
+
+      <div class="comparison-card">
+        <img src="./images/athletes/21615274/profile.jpg" alt="Garrett Comer profile picture" />
+        <h3>Garrett Comer</h3>
+        <p>Grade: 11</p>
+        <p>Season Record: 17:22.3</p>
+        <p>Personal Record: 17:22.3</p>
+        <p>Meets Competed: 13</p>
+      </div>
+
+    </div>
+
+    
+        <div class="shared-meets">
+          <h3>Shared Meets</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Meet</th>
+                <th>Athlete 1 Place</th>
+                <th>Athelet 2 Place</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="Meet">2023 Portage XC Invitational (Division 1 Reserve)</td><td data-label="Athlete 1 Place">104</td><td data-label="Athlete 2 Place">104</td></tr>
+              <tr><td data-label="Meet">2024 Portage Invitational</td><td data-label="Athlete 1 Place">318</td><td data-label="Athlete 2 Place">318</td></tr>
+              <tr><td data-label="Meet">2nd Ann Arbor City Preview presented by AARC</td><td data-label="Athlete 1 Place">9</td><td data-label="Athlete 2 Place">9</td></tr>
+              <tr><td data-label="Meet">37th Early Bird Open (HS Open 5K)</td><td data-label="Athlete 1 Place">160</td><td data-label="Athlete 2 Place">160</td></tr>
+              <tr><td data-label="Meet">39th Fr Gabriel Richard Cross Country Invite (Varsity Large School)</td><td data-label="Athlete 1 Place">134</td><td data-label="Athlete 2 Place">134</td></tr>
+              <tr><td data-label="Meet">Bret Clements Bath Invitational (J.V.)</td><td data-label="Athlete 1 Place">23</td><td data-label="Athlete 2 Place">23</td></tr>
+              <tr><td data-label="Meet">Early Bird Open (Open Men&#39;s 5K)</td><td data-label="Athlete 1 Place">67</td><td data-label="Athlete 2 Place">67</td></tr>
+              <tr><td data-label="Meet">Jackson Invitational - Varsity (Orange Division (1000 + enrolment))</td><td data-label="Athlete 1 Place">206</td><td data-label="Athlete 2 Place">206</td></tr>
+              <tr><td data-label="Meet">Lamplighter Invitational</td><td data-label="Athlete 1 Place">35</td><td data-label="Athlete 2 Place">35</td></tr>
+              <tr><td data-label="Meet">Post Regional Open Meet (PROM) - Springfiled Oaks</td><td data-label="Athlete 1 Place">13</td><td data-label="Athlete 2 Place">13</td></tr>
+              <tr><td data-label="Meet">SEC HS Championship (All Division Reserve)</td><td data-label="Athlete 1 Place">44</td><td data-label="Athlete 2 Place">44</td></tr>
+              <tr><td data-label="Meet">SEC Jamboree 2 (Red) (Reserve Wave 1 (&lt;21:00))</td><td data-label="Athlete 1 Place">21</td><td data-label="Athlete 2 Place">21</td></tr>
+              <tr><td data-label="Meet">SEC-HS Jamboree 1 (Red/White Varsity Boys)</td><td data-label="Athlete 1 Place">97</td><td data-label="Athlete 2 Place">97</td></tr>
+            </tbody>
+          </table>
+        </div>
+        
+    
+      </article>
+    </section>
+
+    <section id="team-events">
+      <h2>Team Events</h2>
+
+      <article>
+        <h3>Event Results</h3>
+        <table id="events-table">
+          <thead>
+            <tr>
+              <th>Race</th>
+              <th>Date</th>
+              <th>Placement</th>
+              <th>Results</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td data-label="Race">Early Bird Open (Open Men&#39;s 5K)</td><td data-label="Date">2023-08-31</td><td data-label="Placement">67 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/223660/results/894305" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">Bret Clements Bath Invitational (J.V.)</td><td data-label="Date">2023-09-09</td><td data-label="Placement">23 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/221738/results/887403" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">SEC-HS Jamboree 1 (Red/White Varsity Boys)</td><td data-label="Date">2023-09-13</td><td data-label="Placement">97 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/221764/results/887492" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">Jackson Invitational - Varsity (Orange Division (1000 + enrolment))</td><td data-label="Date">2023-09-23</td><td data-label="Placement">206 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/221802/results/887639" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">SEC Jamboree 2 (Red) (Reserve Wave 1 (&lt;21:00))</td><td data-label="Date">2023-09-27</td><td data-label="Placement">21 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/222702/results/890995" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">2023 Portage XC Invitational (Division 1 Reserve)</td><td data-label="Date">2023-10-07</td><td data-label="Placement">104 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/221793/results/887586" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">39th Fr Gabriel Richard Cross Country Invite (Varsity Large School)</td><td data-label="Date">2023-10-14</td><td data-label="Placement">134 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/221531/results/886426" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">SEC HS Championship (All Division Reserve)</td><td data-label="Date">2023-10-19</td><td data-label="Placement">44 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/221762/results/887481" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">Post Regional Open Meet (PROM) - Springfiled Oaks</td><td data-label="Date">2023-10-28</td><td data-label="Placement">13 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/229906/results/916818" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">37th Early Bird Open (HS Open 5K)</td><td data-label="Date">2024-08-29</td><td data-label="Placement">160 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/235827/results/943367" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">Lamplighter Invitational</td><td data-label="Date">2025-08-15</td><td data-label="Placement">35 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/247194/results/1007644" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">2nd Ann Arbor City Preview presented by AARC</td><td data-label="Date">2025-08-27</td><td data-label="Placement">9 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/253860/results/1013715" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">2024 Portage Invitational</td><td data-label="Date">2025-10-05</td><td data-label="Placement">318 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/237295/results/948796" target="_blank">View Results</a></td></tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+
+    <section id="team-gallery">
+      <h2>Team Gallery</h2>
+
+      <article class="gallery-grid">
+        <img src="./images/athletes/21615274/2023EarlyBirdOpen.jpg" alt="Team event photo Bird Open 2023" loading="lazy" />
+        <img src="./images/athletes/21615274/2023PROM.jpg" alt="Team event photo 2023 Prom" loading="lazy" />
+        <img src="./images/athletes/21615274/2023SECHSChampionship.jpg" alt="Team event photo SEC Championship" loading="lazy" />
+        <img src="./images/athletes/21615274/2025_20thRiverRatOpen.jpg" alt="Team event photo River Rat Open" loading="lazy" />
+        <img src="./images/athletes/21615274/2025AARC.jpg" alt="Team event photo AARC" loading="lazy" />
+        <img src="./images/athletes/21615274/2025DeWittXCInvitational.jpg" alt="Team event photo DeWitt Invitational" loading="lazy" />
+        <img src="./images/athletes/21615274/2025Lamplighter.jpg" alt="Team event photo Lamp Lighter" loading="lazy" />
+        <img src="./images/athletes/21615274/2025PortageInvitational.jpg" alt="Team event photo Portage Invitational" loading="lazy" />
+        <img src="./images/athletes/21615274/2025SEC_HSJamboree1.jpg" alt="Team event photo SEC Jamboree" loading="lazy" />
+      </article>
+    </section>
+
+  </main>
+
+  <footer id="site-footer">
+    <div class="footer-content">
+      <p>
+        Ann Arbor Skyline Cross Country &middot;
+        Data sourced from
+        <a href="https://www.athletic.net" target="_blank" rel="noopener">
+          Athletic.net
+        </a>
+      </p>
+
+      <p>
+        Generated automatically for SI 338 &middot;
+        <span class="footer-year">2024</span>
+      </p>
+    </div>
+  </footer>
+<script src="scripts/main.js" defer></script>
+</body>
+
+</html>

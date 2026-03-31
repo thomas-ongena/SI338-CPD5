@@ -1,0 +1,342 @@
+/*
+ * BREAKPOINTS USED:
+ *   768px  → Tablet 
+ *   1024px → Laptop / Desktop (defined in this file)
+ *
+ * COLOR SCHEME:
+ *   Inherited from main_page.css CSS 
+ *   No new colors are introduced 
+ */
+
+
+@media (min-width: 1024px) {
+
+    main {
+        max-width: 1200px;
+        margin: 0 auto;          /* Centers the content column */
+        padding: 0 var(--spacing-lg);
+    }
+
+
+    .nav-container {
+        padding: 0 var(--spacing-lg); /* Side padding so links aren't flush to edge */
+        justify-content: center;    /* Pushes links to the right — more editorial */
+        gap: 2.5rem;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        padding: 1.25rem 0.5rem;      /* Taller click target on desktop */
+        letter-spacing: 0.05em;       /* Small tracking improves legibility in nav */
+    }
+
+
+    header {
+        flex-direction: row;          /* Side-by-side instead of stacked */
+        justify-content: space-between;
+        align-items: center;
+        padding: 3rem 4rem;           /* Generous padding for a premium feel */
+        min-height: 200px;
+        text-align: center;
+    }
+
+
+    header h1 {
+        font-size: 2.2rem;            /* Larger heading justified by screen space */
+        line-height: 1.2;
+    }
+
+    header h4 {
+        font-size: 1rem;
+        padding-top: var(--spacing-md);
+        margin: 0;
+    }
+
+    .header-logo {
+        width: 180px;                 /* Larger logo now that we have horizontal room */
+        margin-top: 0;               /* Remove the top margin used in mobile stacking */
+        flex-shrink: 0;              /* Prevents logo from compressing on resize */
+    }
+
+
+
+    section {
+        padding: var(--spacing-lg) 0;
+    }
+
+    /* Shared heading alignment for all section titles */
+    section h2 {
+        font-size: 1.75rem;
+        margin-bottom: var(--spacing-md);
+        border-bottom: 3px solid var(--primary-blue); /* Visual anchor under titles */
+        padding-bottom: var(--spacing-sm);
+        display: inline-block;       /* Border only spans the text width, not full row */
+    }
+
+
+
+    #athlete-roster {
+        grid-template-columns: repeat(3, 1fr);  /* Exactly 3 equal columns */
+        gap: var(--spacing-lg);
+        padding: 0;                              /* Main wrapper handles outer padding */
+    }
+
+    .athlete-card {
+        min-height: 360px;   /* Taller cards take advantage of the fixed grid */
+    }
+
+    /* Scale the photo up slightly to fill the larger card front */
+    .athlete-photo {
+        width: 210px;
+        height: 210px;
+    }
+
+
+
+    .accomplishments-table {
+        width: 80%;                 /* Doesn't need to span full width on laptop */
+        max-width: 800px;
+        margin: var(--spacing-md) auto; /* Center the table on the page */
+        border-collapse: collapse;
+    }
+
+    /* Restore proper table display — undoes the mobile card stacking */
+    .accomplishments-table,
+    .accomplishments-table thead,
+    .accomplishments-table tbody,
+    .accomplishments-table th,
+    .accomplishments-table td,
+    .accomplishments-table tr {
+        display: revert;            /* Restores browser default (table, tr, td etc.) */
+    }
+
+    /* Make the hidden header row visible again */
+    .accomplishments-table thead tr {
+        position: static;           /* Undoes the mobile off-screen positioning */
+    }
+
+    .accomplishments-table th {
+        background-color: var(--primary-blue);
+        color: var(--text-light);
+        padding: 0.75rem 1rem;
+        text-align: left;
+        font-size: 0.85rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+
+    .accomplishments-table td {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid #ddd;
+        /* Remove the mobile pseudo-label — not needed in true table view */
+        padding-left: 1rem;
+        text-align: left;
+    }
+
+    /* Remove the mobile ::before label content — table headers do that job */
+    .accomplishments-table td::before {
+        display: none;
+    }
+
+    .accomplishments-table tbody tr:hover {
+        background-color: var(--accent-sky);  /* Subtle hover for scannability */
+    }
+
+
+
+    .comparison-cards {
+        flex-direction: row;            /* Side by side */
+        justify-content: center;
+        align-items: flex-start;
+        gap: 0;                         /* Gap handled by the VS divider below */
+    }
+
+    .comparison-card {
+        width: 40%;                     /* Each card takes less than half — room for VS */
+        max-width: none;
+    }
+
+    /* The "VS" badge sits between the two cards.
+       Uses a pseudo-element on the container — no extra HTML needed. */
+    .comparison-cards::after {
+        content: "VS";
+        align-self: center;
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: var(--primary-blue);
+        padding: 0 var(--spacing-md);
+        letter-spacing: 0.1em;
+        order: 2;
+    }
+
+    .comparison-card:nth-child(2) {
+        order: 3;
+    }
+
+    /* Comparison controls (dropdowns + button) sit in a single row */
+    .comparison-controls fieldset {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-md);
+        flex-wrap: wrap;
+    }
+
+    /* Shared meets table — restore proper table layout */
+    .shared-meets table {
+        width: 70%;                     /* Narrower — doesn't need full width */
+        max-width: 900px;
+    }
+
+    /* Restore normal table layout for shared meets (same approach as above) */
+    .shared-meets table,
+    .shared-meets thead,
+    .shared-meets tbody,
+    .shared-meets th,
+    .shared-meets td,
+    .shared-meets tr {
+        display: revert;
+    }
+
+    .shared-meets thead tr {
+        position: static;
+    }
+
+    .shared-meets th {
+        background-color: var(--primary-blue);
+        color: var(--text-light);
+        padding: 0.75rem 1rem;
+        text-align: center;
+        font-size: 0.85rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+
+    .shared-meets td {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+        padding-left: 1rem;            /* Undo mobile 50% left padding */
+    }
+
+    .shared-meets td::before {
+        display: none;                 /* Remove mobile pseudo-labels */
+    }
+
+    .shared-meets tbody tr:hover {
+        background-color: var(--accent-sky);
+    }
+
+
+    #events-table,
+    #events-table thead,
+    #events-table tbody,
+    #events-table th,
+    #events-table td,
+    #events-table tr {
+        display: revert;              /* Restores standard HTML table layout */
+    }
+
+    #events-table thead tr {
+        position: static;            /* Undoes mobile off-screen hiding */
+    }
+
+    #events-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: var(--spacing-md);
+        font-size: 0.9rem;           /* Slightly smaller text to fit all 4 columns */
+    }
+
+    #events-table th {
+        background-color: var(--primary-blue);
+        color: var(--text-light);
+        padding: 0.75rem 1rem;
+        text-align: left;
+        font-size: 0.8rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        white-space: nowrap;         /* Prevents header text from wrapping */
+    }
+
+    #events-table td {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid #ddd;
+        padding-left: 1rem;          /* Undo the mobile 50% padding */
+    }
+
+    /* Remove the mobile data-label pseudo-labels */
+    #events-table td::before {
+        display: none;
+    }
+
+    #events-table tbody tr:hover {
+        background-color: var(--accent-sky);
+        cursor: default;
+    }
+
+    /* Prevent the Race column from becoming too wide */
+    #events-table td:first-child {
+        max-width: 380px;
+    }
+
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);  /* 3 equal columns */
+        gap: var(--spacing-md);
+    }
+
+    /* Allow images to be taller on desktop — more visual impact */
+    .gallery-grid img {
+        height: 260px;
+        object-fit: cover;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Hover: subtle lift effect using scale + shadow */
+    .gallery-grid img:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+
+ 
+    #site-footer {
+        padding: var(--spacing-lg) 4rem;
+        text-align: center;
+    }
+
+    .footer-content {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--spacing-md);
+    }
+
+    .footer-content p {
+        margin: 0;
+    }
+
+} /* END @media (min-width: 1024px) */
+
+
+
+@media (min-width: 1440px) {
+
+    main {
+        max-width: 1400px;   /* Wider cap for large monitors */
+    }
+
+    /* 4-column athlete grid on very wide screens */
+    #athlete-roster {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    header h1 {
+        font-size: 2.6rem;
+    }
+
+} /* END @media (min-width: 1440px) */

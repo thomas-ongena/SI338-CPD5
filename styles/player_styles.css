@@ -1,0 +1,314 @@
+/* --- CSS Color Variables --- */
+/* Using the same variables for consistency */
+:root {
+    --primary-blue: #93c5fd; 
+    --accent-sky: #1e293b;
+    --text-dark: #f1f5f9;  
+    --text-light: #0f172a; 
+    --bg-grey: #020617;    
+    --nav-bg: #1e293b;
+    --link-color: #60a5fa;
+    --surface-dark: #2b2b2b;
+    
+    /* Standardized spacing units */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+}
+
+/* --- Base Styles --- */
+html, body {
+    background-color: var(--text-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+}
+
+/* Prevent horizontal overflow while maintaining sticky nav functionality */
+main, section, header, footer {
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* --- 3. Link Styling --- */
+a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover, a:focus {
+    color: skyblue;
+    text-decoration: underline;
+}
+
+/* --- Nav styling --- */ 
+
+#athlete-nav {
+    background-color: var(--surface-dark);   /* Distinct dark grey — creates contrast against
+                                     the page background of var(--text-light) */
+    width: 100%;
+}
+
+#athlete-nav .nav-container {
+    display: flex;
+    flex-direction: row;              /* Horizontal — logo | title | link */
+    justify-content: space-between;   /* Pushes logo to far left, link to far right */
+    align-items: center;
+    padding: 12px 30px;
+    gap: 1rem;
+}
+
+/* Skyline logo inside the nav — sized to match the bar height */
+.nav-logo {
+    width: 60px;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;                   /* Prevents logo from compressing on resize */
+}
+
+#athlete-nav .nav-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    flex: 1;                          /* Takes up remaining space, keeps title centered
+                                         between the logo and link naturally */
+}
+
+#athlete-nav .nav-link {
+    font-size: 0.95rem;
+    color: var(--primary-blue);
+    font-weight: bold;
+    white-space: nowrap;              /* Prevents link text from wrapping on resize */
+    flex-shrink: 0;
+    transition: color 0.3s ease;
+}
+
+#athlete-nav .nav-link:hover,
+#athlete-nav .nav-link:focus {
+    color: #ffffff;
+}
+
+#athlete-header .athlete-photo {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto 0 auto;   /* Centered horizontally, no extra top gap */
+    border: 3px solid var(--primary-blue);  /* Adds a polished frame */
+}
+
+#athlete-header {
+    padding-top: 1.5rem;     /* Pulling content up */
+    padding-bottom: 2rem;
+}
+
+.athlete-info {
+    display: flex;
+    font-size: 20px;
+    flex-direction: column;
+    font-weight: bold;
+    align-items: center; /* Centers under the image */
+    text-align: center;
+}
+
+.athlete-records {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+    padding: 15px;
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    border-radius: 8px 8px 8px 8px; /* Rounds all corners */
+    min-width: 250px;
+}
+
+.athlete-info-card {
+    background-color: var(--surface-dark);       /* Same dark grey as the nav bar — consistent */
+    border-radius: 0 0 10px 10px;    /* Rounds only bottom corners so it reads as
+                                         a base attached to the photo above it */
+    padding: 1.25rem 1.5rem;
+    max-width: 300px;                /* Matches the photo width exactly */
+    margin: 0 auto;                  /* Centers under the photo */
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;                     /* Even spacing between each info row */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* All text paragraphs inside the card */
+.athlete-info-card p {
+    margin: 0;
+    color: #e2e8f0;                  /* Soft white — readable on dark background */
+    font-size: 0.95rem;
+}
+
+/* School name */
+.athlete-info-card .athlete-school {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 0.03em;
+}
+
+/* Thin divider line between school and grade */
+.athlete-info-card .athlete-school::after {
+    content: "";
+    display: block;
+    width: 60%;
+    height: 1px;
+    background-color: var(--primary-blue);
+    margin: 0.5rem auto 0;           /* Centers the divider below the school name */
+}
+
+/* Link inside the card — inherits the blue link style but sits on dark bg */
+.athlete-info-card a {
+    color: var(--primary-blue);
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.athlete-info-card a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Records row — already styled by .athlete-records, just override background
+   and padding since it now lives on the dark card instead of its own bg */
+.athlete-info-card .athlete-records {
+    background-color: transparent;   /* Removes the original light blue background
+                                         — card provides the background now */
+    border-radius: 0;
+    padding: 0.5rem 0 0;
+    min-width: unset;
+    gap: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1); /* Subtle separator above records */
+    width: 100%;
+    justify-content: center;
+}
+
+/* Record text — overrides dark text from .athlete-records since bg is now dark */
+.athlete-info-card .athlete-records p {
+    color: #e2e8f0;
+    font-size: 0.85rem;
+}
+
+#athlete-header h2 {
+    padding-left: 2%;
+    font-size: 1.6rem;
+    border-bottom: 3px solid var(--primary-blue);  /* Matches homepage style */
+    padding-bottom: 0.4rem;
+    display: inline-block;    /* Border wraps text width only, not full row */
+    margin-bottom: 1.5rem;
+}
+
+#results-table {
+    width: 95%;
+    margin: 20px auto;
+    border-spacing: 0 5px;    /* Adds a vertical gap between entries */
+}
+
+/* Style for the individual race rows */
+#results-table tbody tr {
+    background-color: var(--accent-sky); /* Lighter blue background */
+    border: 2px solid var(--primary-blue); /* Entry border */
+}
+
+/* Giving each cell a border */
+#results-table td {
+    padding: 10px;
+    border-top: 1px solid var(--primary-blue);
+    border-bottom: 1px solid var(--primary-blue);
+    text-align: center;
+}
+
+/* Rounds the corners of the entries */
+#results-table td:first-child {
+    border-left: 1px solid var(--primary-blue);
+    border-radius: 8px 0 0 8px;
+}
+
+#results-table td:last-child {
+    border-right: 1px solid var(--primary-blue);
+    border-radius: 0 8px 8px 0;
+}
+
+/* Simple styling for the headers to match */
+#results-table th {
+    padding: 10px;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+/* Photo Gallery */ 
+
+.gallery-grid {
+    display: grid;
+    /* Creates as many columns as fit, at least 150px wide each */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    background-color: var(--accent-sky);
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: middle;    
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.gallery-grid img:nth-child(4) {
+    object-position: top;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.10);
+}
+
+/* Performance Graph */ 
+
+#performance-graph {
+    margin: var(--spacing-lg) auto;
+    padding: var(--spacing-lg);
+    text-align: center;
+
+}
+
+#performance-graph img:hover {  /* Makes it easier to read when tapped on */
+    transform: scale(1.4);
+    cursor: zoom-in;
+}
+
+/* Light mode */
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --primary-blue: #004a99;     /* Original blue — readable on white */
+        --accent-sky: #e0f2fe;       /* Light sky blue for table/card backgrounds */
+        --text-dark: #1a1a1a;        /* Near-black body text */
+        --text-light: #ffffff;       /* White for element backgrounds */
+        --bg-grey: #f4f4f4;          /* Light grey page background */
+        --nav-bg: #333333;           /* Dark nav bar — intentionally kept dark */
+        --surface-dark: #333333;     /* Nav and info card — dark against light page */
+    }
+}

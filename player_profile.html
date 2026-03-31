@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Garrett Comer</title>
+  <link rel="stylesheet" href="styles/style_reset.css">
+  <link rel="stylesheet" href="styles/player_styles.css">
+  <link rel="stylesheet" href="styles/laptop.css">
+  
+</head>
+
+<body>
+
+  <nav id="athlete-nav">
+    <div class="nav-container">
+      <img src="images/athletes/21615274/skyline_logo.png" alt="Skyline High School Logo" class="nav-logo"/>
+      <span class="nav-title">Garrett Comer Athlete Profile</span>
+      <a href="index.html" class="nav-link">Home Page</a>
+    </div>
+  </nav>
+
+  <header id="athlete-header">
+    <article class="athlete-info">
+      <h2>Athlete Information</h2>
+      <img src="images/athletes/21615274/profile.jpg" alt="Athlete profile picture" class="athlete-photo" />
+
+      <div class="athlete-info-card">
+        <p class="athlete-school">Ann Arbor Skyline</p>
+        <p class="athlete-grade">Current Grade: 11</p>
+
+        <a href="https://www.athletic.net/athlete/21615274/cross-country/">
+        athlete.net account
+        </a>
+
+        <div class="athlete-records">
+          <p class="athlete-sr">Season Record (SR): 17:22.3</p>
+          <p class="athlete-pr">Personal Record (PR): 17:22.3</p>
+        </div>
+      </div>
+    </article>
+  </header>
+
+  <main>
+
+    <section id="athlete-results">
+      <h2>Race Results</h2>
+
+      <div class="results-filters">
+        <form>
+          <fieldset>
+            <legend>Filter Race Results</legend>
+
+            <p id="filter-instructions">
+              Use the fields below to filter race results by meet or date
+            </p>
+
+            <div class="filter-group">
+              <label for="filter-meet">Meet Name:</label>
+              <input type="text" id="filter-meet" name="filter-meet" placeholder="e.g. SEC, Portage" aria-describedby="filter-instructions"/>
+            </div>
+
+            <div class="filter-group">
+              <label for="filter-date">Date:</label>
+              <input type="text" id="filter-date" name="filter-date" placeholder="e.g. 2023, Aug 2025" aria-describedby="filter-instructions"/>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+
+      <article>
+        <h3>Race Results Table</h3>
+
+        <table id="results-table">
+          <thead>
+            <tr>
+              <th>Race Name</th>
+              <th>Date</th>
+              <th>Location</th>
+              <th>Distance</th>
+              <th>Time</th>
+              <th>Place</th>
+              <th>Grade</th>
+              <th>Results</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr><td>Lamplighter Invitational</td><td>Aug 15 2025</td><td>N/A</td><td>5K</td><td>17:22.3</td><td>35</td><td>11</td><td><a href="https://www.athletic.net/CrossCountry/meet/247194/results/1007644" target="_blank">View Results</a></td></tr>
+          <tr><td>2nd Ann Arbor City Preview presented by AARC</td><td>Aug 27 2025</td><td>N/A</td><td>5K</td><td>17:40.1</td><td>9</td><td>11</td><td><a href="https://www.athletic.net/CrossCountry/meet/253860/results/1013715" target="_blank">View Results</a></td></tr>
+          <tr><td>37th Early Bird Open (HS Open 5K)</td><td>Aug 29 2024</td><td>N/A</td><td>5K</td><td>21:04.2</td><td>160</td><td>10</td><td><a href="https://www.athletic.net/CrossCountry/meet/235827/results/943367" target="_blank">View Results</a></td></tr>
+          <tr><td>2024 Portage Invitational</td><td>Oct 5 2025</td><td>N/A</td><td>5K</td><td>21:04.9</td><td>318</td><td>9</td><td><a href="https://www.athletic.net/CrossCountry/meet/237295/results/948796" target="_blank">View Results</a></td></tr>
+          <tr><td>Early Bird Open (Open Men&#39;s 5K)</td><td>Aug 31 2023</td><td>N/A</td><td>5K</td><td>19:45.4</td><td>67</td><td>9</td><td><a href="https://www.athletic.net/CrossCountry/meet/223660/results/894305" target="_blank">View Results</a></td></tr>
+          <tr><td>Bret Clements Bath Invitational (J.V.)</td><td>Sep 9 2023</td><td>N/A</td><td>5K</td><td>19:16.3</td><td>23</td><td>9</td><td><a href="https://www.athletic.net/CrossCountry/meet/221738/results/887403" target="_blank">View Results</a></td></tr>
+          <tr><td>SEC-HS Jamboree 1 (Red/White Varsity Boys)</td><td>Sep 13 2023</td><td>N/A</td><td>5K</td><td>19:22.2</td><td>97</td><td>9</td><td><a href="https://www.athletic.net/CrossCountry/meet/221764/results/887492" target="_blank">View Results</a></td></tr>
+          <tr><td>Jackson Invitational - Varsity (Orange Division (1000 + enrolment))</td><td>Sep 23 2023</td><td>N/A</td><td>5K</td><td>18:47.9</td><td>206</td><td>9</td><td><a href="https://www.athletic.net/CrossCountry/meet/221802/results/887639" target="_blank">View Results</a></td></tr>
+          <tr><td>SEC Jamboree 2 (Red) (Reserve Wave 1 (&lt;21:00))</td><td>Sep 27 2023</td><td>N/A</td><td>5K</td><td>18:36.0</td><td>21</td><td>9</td><td><a href="https://www.athletic.net/CrossCountry/meet/222702/results/890995" target="_blank">View Results</a></td></tr>
+          <tr><td>2023 Portage XC Invitational (Division 1 Reserve)</td><td>Oct 7 2023</td><td>N/A</td><td>5K</td><td>18:47.1</td><td>104</td><td>9</td><td><a href="https://www.athletic.net/CrossCountry/meet/221793/results/887586" target="_blank">View Results</a></td></tr>
+          <tr><td>39th Fr Gabriel Richard Cross Country Invite (Varsity Large School)</td><td>Oct 14 2023</td><td>N/A</td><td>5K</td><td>20:06.6</td><td>134</td><td>9</td><td><a href="https://www.athletic.net/CrossCountry/meet/221531/results/886426" target="_blank">View Results</a></td></tr>
+          <tr><td>SEC HS Championship (All Division Reserve)</td><td>Oct 19 2023</td><td>N/A</td><td>5K</td><td>19:21.8</td><td>44</td><td>9</td><td><a href="https://www.athletic.net/CrossCountry/meet/221762/results/887481" target="_blank">View Results</a></td></tr>
+          <tr><td>Post Regional Open Meet (PROM) - Springfiled Oaks</td><td>Oct 28 2023</td><td>N/A</td><td>5K</td><td>18:24.6 PR</td><td>13</td><td>9</td><td><a href="https://www.athletic.net/CrossCountry/meet/229906/results/916818" target="_blank">View Results</a></td></tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+
+    <section id="performance-graph">
+      <h2>Performance Progression</h2>
+
+      <div>
+        <p id="graph-description">
+          This graph visualizes the athlete’s race times across meets,
+          color-coded by grade. Tap to zoom.
+        </p>
+      </div>
+
+      <article>
+        <h3>Performance Graph</h3>
+
+        <img src="images/athletes/21615274/performance.png" alt="Athlete performance progression graph"
+          aria-describedby="graph-description" style="max-width: 100%; height: auto;" />
+      </article>
+    </section>
+
+    <section id="athlete-gallery">
+      <h2>Gallery</h2>
+
+      <article class="gallery-grid">
+        <img src="images/athletes/21615274/2023EarlyBirdOpen.jpg" alt="Race gallery photo: 2023Earlybirdopen" loading="lazy" />
+        <img src="images/athletes/21615274/2023PROM.jpg" alt="Race gallery photo: 2023Prom" loading="lazy" />
+        <img src="images/athletes/21615274/2023SECHSChampionship.jpg" alt="Race gallery photo: 2023Sechschampionship" loading="lazy" />
+        <img src="images/athletes/21615274/2024EarlyBirdOpen.jpg" alt="Race gallery photo: 2024Earlybirdopen" loading="lazy" />
+        <img src="images/athletes/21615274/202557thHolly-Duane.jpg" alt="Race gallery photo: 202557Thholly Duane" loading="lazy" />
+        <img src="images/athletes/21615274/2025AARC.jpg" alt="Race gallery photo: 2025Aarc" loading="lazy" />
+        <img src="images/athletes/21615274/2025DeWittXCInvitational.jpg" alt="Race gallery photo: 2025Dewittxcinvitational" loading="lazy" />
+        <img src="images/athletes/21615274/2025Lamplighter.jpg" alt="Race gallery photo: 2025Lamplighter" loading="lazy" />
+        <img src="images/athletes/21615274/2025PortageInvitational.jpg" alt="Race gallery photo: 2025Portageinvitational" loading="lazy" />
+        <img src="images/athletes/21615274/2025SEC_HSJamboree1.jpg" alt="Race gallery photo: 2025Sec Hsjamboree1" loading="lazy" />
+        <img src="images/athletes/21615274/2025SEC_HSJamboree2.jpg" alt="Race gallery photo: 2025Sec Hsjamboree2" loading="lazy" />
+        <img src="images/athletes/21615274/2025_20thRiverRatOpen.jpg" alt="Race gallery photo: 2025 20Thriverratopen" loading="lazy" />
+      </article>
+    </section>
+
+  </main>
+
+  <footer id="site-footer">
+    <div class="footer-content">
+      <p>
+        Ann Arbor Skyline Cross Country &middot;
+        Data sourced from
+        <a href="https://www.athletic.net" target="_blank" rel="noopener">
+          Athletic.net
+        </a>
+      </p>
+
+      <p>
+        Generated automatically for SI 338 &middot;
+        <span class="footer-year">2024</span>
+      </p>
+    </div>
+  </footer>
+<script src="scripts/player.js" defer></script>
+</body>
+
+</html>

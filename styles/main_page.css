@@ -1,0 +1,436 @@
+/* --- CSS color variables --- */
+:root {
+    /* Color Variables */
+    --primary-blue: #004a99;
+    --accent-sky: #e0f2fe;
+    --text-dark: #1a1a1a;
+    --text-light: #ffffff;
+    --bg-grey: #f4f4f4;
+    --nav-bg: #333333;
+    
+    /* Spacing units */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+}
+
+
+/* --- Base styles --- */
+body {
+    background-color: var(--bg-grey);
+    color: var(--text-dark);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+main, section, header, footer {
+    width: 100%;
+    overflow-x: hidden; 
+    box-sizing: border-box;
+}
+
+
+/* --- Nav section --- */
+#main-nav {
+    background-color: var(--nav-bg); 
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    width: 100%;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 0;
+    overflow-x: auto; /* Allows swiping if screen is extremely narrow */
+}
+
+.nav-link {
+    font-weight: bold;
+    padding: 10px 5px; 
+    font-size: 14px; 
+    color: skyblue;
+    font-family: Montserrat, sans-serif;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: var(--text-dark);
+    outline: 1px solid white;
+}
+
+@media (min-width: 768px) {
+    .nav-link {
+        font-size: 20px; 
+        padding: 15px 20px;
+    }
+    
+    .nav-container {
+        flex-direction: row; /* Horizontal layout for larger screens */
+        justify-content: center;
+        gap: var(--spacing-lg);
+    }
+}
+
+
+/* --- Header section --- */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: var(--spacing-md) var(--spacing-sm); /* Reduced padding for mobile */
+    background-color: var(--text-light);
+    border-bottom: 4px solid var(--primary-blue);
+    min-height: 250px; /* Ensures space for the logo */
+}
+
+header h1 {
+    font-size: 22px; 
+    color: var(--primary-blue);
+    margin: 0; /* Remove default margins to stick to top */
+    padding: 0;
+    line-height: 1.1;
+}
+
+header h4 {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #555;
+    margin: var(--spacing-sm) 0;
+}
+
+.header-logo {
+    width: 100px;
+    height: auto;
+    margin-top: var(--spacing-md);
+    /* object-fit ensures the logo isn't distorted */
+    object-fit: contain; 
+}
+
+/* Tablet/Desktop Header Adjustment */
+@media (min-width: 768px) {
+    header {
+        padding: 4rem 10%; /* More breathing room on desktop */
+    }
+    .header-logo {
+        width: 150px;
+    }
+}
+
+/* --- Athlete cards --- */
+#athlete-roster {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md);
+}
+
+.athlete-card {
+    min-height: 300px;
+    perspective: 1000px; 
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* Touch-friendly: card flips on hover or when it has focus */
+.athlete-card:hover .card-inner,
+.athlete-card:focus-within .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: white;
+    border-radius: 15px;
+    display: flex;
+    margin-right: var(--spacing-sm);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Circular Athlete Photo */
+.athlete-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%; 
+    border: 4px solid var(--primary-blue);
+    transition: transform 0.3s ease;
+}
+
+
+/* --- Table --- */
+/* Turn table into a series of cards */
+@media (max-width: 767px) {
+    table, thead, tbody, th, td, tr {
+        display: block; 
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        margin-bottom: var(--spacing-md);
+        border: 1px solid #ccc;
+        background: white;
+        padding: var(--spacing-sm);
+    }
+
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%; 
+        text-align: left;
+        margin-bottom: 5px;
+    }
+
+    /* Creates the label on the left of each row item */
+    td:before {
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        content: attr(data-label); 
+    }
+}
+
+/* --- Accesibility --- */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms ; /* Removes all animations */
+        transition-duration: 0.01ms ;
+        scroll-behavior: auto ; /* Jumps right to section */
+    }
+}
+
+/* --- Desktop Grid Layout --- */
+@media (min-width: 768px) {
+    #athlete-roster {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* --- Dark Mode --- */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Lighter, vibrant blue for dark backgrounds to pass contrast tests */
+        --primary-blue: #93c5fd; 
+        --accent-sky: #1e293b;
+        --text-dark: #f1f5f9;  /* Off-white for body text */
+        --text-light: #0f172a; /* Darker navy for element backgrounds */
+        --bg-grey: #020617;    /* Deep black/blue background */
+        --nav-bg: #1e293b;
+    }
+
+    /* Header visibility */
+    header {
+        background-color: var(--text-light) ;
+        border-bottom: 4px solid var(--primary-blue);
+    }
+
+    header h1, header h4 {
+        color: var(--text-dark) ; /* Forces title to be visible */
+    }
+
+    /* Table Row visibility */
+    tr {
+        background-color: #1e293b;
+        color: var(--text-dark);
+        border: 1px solid #334155;
+    }
+
+    /* Fix for "View Results" and Footer Links */
+    a, td[data-label="Results"] a {
+        color: var(--text-dark);
+        text-underline-offset: 4px;
+    }
+
+    .athlete-link {
+    color: var(--nav-bg) ;
+    }
+
+    footer a {
+        color: var(--primary-blue) ;
+        font-weight: bold;
+    }
+
+    .card-front {
+        background-color: #1e293b;
+        border: 2px solid var(--primary-blue);
+    }
+    
+    #sort-by-choices, fieldset legend {
+        color: var(--text-dark);
+    }
+}
+
+/* --- High Contrast Mode --- */
+@media (prefers-contrast: more) {
+    :root {
+        --primary-blue: #0000ff; /* Pure Blue */
+        --nav-bg: #000000;       /* Pure Black */
+        --text-dark: #000000;
+        --bg-grey: #ffffff;      /* Pure White */
+    }
+
+    .nav-link {
+        text-decoration: underline; /* Extra visual cue */
+        font-weight: 900;
+    }
+
+    tr, .athlete-card {
+        border: 3px solid black ;
+    }
+}
+
+
+/* --- Team Accomplishments --- */
+#team-accomplishments h2, 
+#team-accomplishments h3 {
+    text-align: left;
+    padding-left: var(--spacing-sm); /* Moves headers away from the far left edge */
+    margin-bottom: var(--spacing-md);
+}
+
+#team-accomplishments {
+    padding: var(--spacing-md);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* --- Player Comparison --- */
+
+/* Aligning headers away from left edge */
+#player-comparison h2, 
+#player-comparison h3,
+.shared-meets h3 {
+    text-align: left;
+    padding-left: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+}
+
+/* --- Comparison Cards Container --- */
+.comparison-cards {
+    display: flex;
+    flex-direction: column; /* Stacked on mobile */
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    align-items: center;
+}
+
+.comparison-card {
+    background: var(--accent-sky);
+    border: 2px solid var(--primary-blue);
+    border-radius: 12px;
+    padding: var(--spacing-md);
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.comparison-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Circular images */
+    object-fit: cover;
+    margin-bottom: var(--spacing-sm);
+    border: 3px solid var(--primary-blue);
+}
+
+/* --- Shared Meets Table Styling --- */
+.shared-meets table {
+    font-weight: bold;
+    width: 90%;
+    margin: var(--spacing-md) auto;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.shared-meets td[data-label="Meet"]:before {    /* Hide word meet */
+        display: none;
+    }
+
+.shared-meets td {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+/* --- Team Gallery Photos --- */
+
+.gallery-grid {
+    display: grid;
+    /* Base style: 1 column for mobile to ensure easy viewing */
+    grid-template-columns: 1fr; 
+    gap: 15px;
+    padding: var(--spacing-md);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.gallery-grid img {
+    width: 100%;
+    object-fit: cover; /* Prevents distortion */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* --- Final Tweaks --- */ 
+
+
+#team-gallery h2 {
+    text-align: left;
+    margin-top: var(--spacing-lg);
+    margin-bottom: 2px; 
+}
+
+#team-gallery h3 {
+    margin-top: 0; 
+}
+
+.athlete-card a {
+    color: var(--text-light); /* Sets the link to white */
+    text-decoration: underline;
+    font-weight: bold;
+}
